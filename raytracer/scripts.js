@@ -38,8 +38,17 @@ function create_canvas(h, w) {
 }
 
 addEventListener("load", () => {
-  let C = create_canvas(540, 960).getContext("2d");
+  let C = create_canvas(540, 540).getContext("2d");
   C.imageSmoothingEnabled = false;
 
-  put_pixel(1, 1, C);
+  let i = 1;
+
+  for (; i < 540; i++) {
+    let j = 1;
+
+    while (j < 540) {
+      put_pixel(j, i, C);
+      j += 1;
+    }
+  }
 });
